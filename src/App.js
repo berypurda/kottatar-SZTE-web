@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar"
 import Login from "./pages/login/Login"
 import Signup from "./pages/signup/Signup"
 import Home from "./pages/home/Home"
+import Score from "./pages/score/Score"
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -20,7 +21,7 @@ function App() {
             <Routes>
               <Route
                 path="/"
-                element={user ? <Home /> : <Navigate to="/login" />}
+                element={user ? <Score /> : <Navigate to="/login" />}
               />
               <Route
                 path="/login"
