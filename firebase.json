@@ -6,7 +6,7 @@
   "hosting": {
     "headers": [
       {
-        "source": "**",
+        "source": "**/*.@(pdf|eot|otf|ttf|ttc|woff|font.css)",
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
@@ -20,6 +20,7 @@
     "rewrites": [
       {
         "source": "**",
+        "function": "app",
         "destination": "/index.html"
       }
     ]
