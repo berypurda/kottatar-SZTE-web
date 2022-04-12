@@ -2,10 +2,7 @@ import React, { useState } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import "./Pdf.css"
 
-const url =
-  "https://s9.imslp.org/files/imglnks/usimg/b/b2/IMSLP714333-PMLP1139961-SheetMusic_36500-2.pdf"
-
-export default function Test() {
+export default function Test({ url }) {
   pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
   const [numPages, setNumPages] = useState(null)
   const [pageNumber, setPageNumber] = useState(1)

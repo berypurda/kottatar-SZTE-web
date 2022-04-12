@@ -16,6 +16,18 @@ export default function Navbar() {
           {/* <img src={Temple} alt="dojo logo" /> */}
           {/* <span>The Lounge</span> */}
         </li>
+        {user && (
+          <li>
+            <Link to="/upload">Upload</Link>
+          </li>
+        )}
+
+        {user && (
+          <li>
+            <Link to="/uploaded">Uploaded</Link>
+          </li>
+        )}
+
         {!user && (
           <>
             <li>

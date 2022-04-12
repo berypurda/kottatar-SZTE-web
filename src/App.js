@@ -8,6 +8,8 @@ import Login from "./pages/login/Login"
 import Signup from "./pages/signup/Signup"
 import Home from "./pages/home/Home"
 import Score from "./pages/score/Score"
+import Upload from "./pages/upload/Upload"
+import Uploaded from "./pages/uploaded/Uploaded"
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -25,11 +27,23 @@ function App() {
               />
               <Route
                 path="/login"
-                element={user ? <Navigate to="/" /> : <Login />}
+                element={user ? <Navigate to="/upload" /> : <Login />}
               />
               <Route
                 path="/signup"
-                element={user ? <Navigate to="/" /> : <Signup />}
+                element={user ? <Navigate to="/upload" /> : <Signup />}
+              />
+              <Route
+                path="/upload"
+                element={user ? <Upload /> : <Navigate to="/uploaded" />}
+              />
+              <Route
+                path="/uploaded"
+                element={user ? <Uploaded /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/scores/:id"
+                element={user ? <Score /> : <Navigate to="/login" />}
               />
             </Routes>
           </div>
