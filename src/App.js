@@ -23,7 +23,7 @@ function App() {
             <Routes>
               <Route
                 path="/"
-                element={user ? <Score /> : <Navigate to="/login" />}
+                element={user ? <Uploaded /> : <Navigate to="/login" />}
               />
               <Route
                 path="/login"
