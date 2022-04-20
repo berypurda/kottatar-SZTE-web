@@ -14,7 +14,7 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit} className="auth-form">
-      <h2>log in</h2>
+      <h2>Bejelentkezés</h2>
       <label>
         <span>email:</span>
         <input
@@ -25,7 +25,7 @@ export default function Login() {
         />
       </label>
       <label>
-        <span>password:</span>
+        <span>jelszó:</span>
         <input
           required
           type="password"
@@ -33,7 +33,7 @@ export default function Login() {
           value={password}
         />
       </label>
-      {!isPending && <button className="btn">Log in</button>}
+      {!isPending && <button className="btn">Belépés</button>}
       {isPending && (
         <button className="btn" disabled>
           loading

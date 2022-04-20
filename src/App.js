@@ -30,11 +30,11 @@ function App() {
               />
               <Route
                 path="/login"
-                element={user ? <Navigate to="/upload" /> : <Login />}
+                element={user ? <Home />  : <Login />}
               />
               <Route
                 path="/signup"
-                element={user ? <Navigate to="/upload" /> : <Signup />}
+                element={user ? <Home />  : <Signup />}
               />
               <Route
                 path="/upload"
