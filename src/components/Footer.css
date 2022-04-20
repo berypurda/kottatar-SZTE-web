@@ -1,0 +1,13 @@
+.main-footer {
+    color: rgba(228, 227, 227, 0.811);
+    background-color: #333;
+    padding-top:2em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+.row{
+  padding-bottom: 1em;
+}

@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+}
+.App .container {
+  flex-grow: 1;
+  
+}
+
+.App.dark{
+  background: #333;
+}
