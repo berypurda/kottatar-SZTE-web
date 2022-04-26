@@ -8,6 +8,7 @@ let initialState = {
   success: null,
 }
 
+// visszakapott állapot kezelés
 const firestoreReducer = (state, action) => {
   switch (action.type) {
     case "IS_PENDING":
@@ -44,7 +45,7 @@ export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState)
   const [isCancelled, setIsCancelled] = useState(false)
 
-  // collection ref
+  // kollekció referencia változó
   const ref = projectFirestore.collection(collection)
 
   // only dispatch if not cancelled
@@ -102,3 +103,4 @@ export const useFirestore = (collection) => {
 
   return { addDocument, deleteDocument, updateDocument, response }
 }
+

@@ -1,9 +1,5 @@
 import { useState, useEffect } from "react"
-import {
-  projectAuth,
-  projectStorage,
-  projectFirestore,
-} from "../firebase/config"
+import { projectAuth, projectFirestore } from "../firebase/config"
 import { useAuthContext } from "./useAuthContext"
 
 export const useSignup = () => {
@@ -17,28 +13,23 @@ export const useSignup = () => {
     setIsPending(true)
 
     try {
-      // signup
+      // regisztráció
       const res = await projectAuth.createUserWithEmailAndPassword(
         email,
         password
       )
-
       if (!res) {
         throw new Error("Could not complete signup")
       }
-
-      // add display AND PHOTO_URL name to user
+      // felhasználónév hozzáadása
       await res.user.updateProfile({ displayName })
-
-      // create a user document
+      // felhasználó dokumentum létrehozása firestore-ban
       await projectFirestore.collection("users").doc(res.user.uid).set({
         admin: false,
         displayName,
       })
-
-      // dispatch login action
+      // bejelentkezési akció kijelentése
       dispatch({ type: "LOGIN", payload: res.user })
-
       if (!isCancelled) {
         setIsPending(false)
         setError(null)
