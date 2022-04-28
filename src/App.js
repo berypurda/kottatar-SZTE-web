@@ -10,19 +10,23 @@ import Home from "./pages/home/Home"
 import Score from "./pages/score/Score"
 import Upload from "./pages/upload/Upload"
 import Uploaded from "./pages/uploaded/Uploaded"
+import { ModeProvider } from "./context/ModeContext"
+import { useMode} from "./hooks/useMode"
+import ModeSelector from "./components/ModeSelector"
 
 
 
 function App() {
   const { user, authIsReady } = useAuthContext()
+  const { mode } = useMode()
 
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       {authIsReady && (
         <BrowserRouter>
           <div className="container">
             <Navbar />
-            
+            <ModeSelector />
             <Routes>
               <Route
                 path="/"

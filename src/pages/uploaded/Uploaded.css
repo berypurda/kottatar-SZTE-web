@@ -32,3 +32,7 @@
 .score-filter button.active {
   color: var(--primary-color);
 }
+
+.uploaded.dark{
+  background: #333;
+}
