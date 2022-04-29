@@ -63,6 +63,7 @@ export default function Upload() {
 
   return (
     <div className="upload">
+    <div className="upload-form">
       <h3>Kotta hozzáadása</h3>
       <form onSubmit={handleSubmit}>
         <label>
@@ -101,6 +102,7 @@ export default function Upload() {
         {!isPending && <button className="btn">Kotta hozzáadása</button>}
         {error && <div className="error">{error}</div>}
       </form>
+    </div>
     </div>
   )
 }

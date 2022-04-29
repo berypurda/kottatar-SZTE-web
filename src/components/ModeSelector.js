@@ -4,7 +4,7 @@ import modeIcon from "./Imgs/mode-icon.svg"
 import "./ModeSelector.css"
 
 export default function ModeSelector() {
-    const { changeMode, mode} = useMode()
+    const { changeMode, mode} = useMode('light')
 
     const toggleMode = () => {
         changeMode(mode === 'dark' ? 'light' : 'dark')

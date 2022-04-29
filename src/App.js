@@ -8,9 +8,9 @@ import Login from "./pages/login/Login"
 import Signup from "./pages/signup/Signup"
 import Home from "./pages/home/Home"
 import Score from "./pages/score/Score"
+import Search from "./pages/search/Search"
 import Upload from "./pages/upload/Upload"
 import Uploaded from "./pages/uploaded/Uploaded"
-import { ModeProvider } from "./context/ModeContext"
 import { useMode} from "./hooks/useMode"
 import ModeSelector from "./components/ModeSelector"
 
@@ -26,7 +26,7 @@ function App() {
         <BrowserRouter>
           <div className="container">
             <Navbar />
-            <ModeSelector />
+            
             <Routes>
               <Route
                 path="/"
@@ -39,6 +39,10 @@ function App() {
               <Route
                 path="/signup"
                 element={user ? <Home />  : <Signup />}
+              />
+              <Route
+                path="/search"
+                element={user ? <Search /> : <Navigate to="/login" />}
               />
               <Route
                 path="/upload"

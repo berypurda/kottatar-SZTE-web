@@ -1,10 +1,11 @@
 .score-list {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px,2.5em));
   grid-gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
+  justify-content: center;
 }
 .score-list a {
   background-color: #fff;

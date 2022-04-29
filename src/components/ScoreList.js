@@ -7,7 +7,7 @@ import "./ScoreList.css"
 export default function ScoreList({ scores }) {
   return (
     <div className="score-list">
-      {scores.length === 0 && <p>No scores yet</p>}
+      {scores.length === 0 && <p>Nincs ilyen kotta :(</p>}
       {scores.map((score) => (
         <a href={score.url}>
           <h4>{score.title}</h4>

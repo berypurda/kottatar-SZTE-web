@@ -13,6 +13,7 @@ export default function Login() {
   }
 
   return (
+    <div className="login-page">
     <form onSubmit={handleSubmit} className="auth-form">
       <h2>Bejelentkezés</h2>
       <label>
@@ -41,5 +42,7 @@ export default function Login() {
       )}
       {error && <div className="error">{error}</div>}
     </form>
+    </div>
+    
   )
 }
