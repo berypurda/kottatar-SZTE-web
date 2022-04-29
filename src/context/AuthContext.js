@@ -1,8 +1,10 @@
 import { createContext, useReducer, useEffect } from "react"
 import { projectAuth } from "../firebase/config"
 
+// kontextus létrehozás a beépített react kontextus kezelővel
 export const AuthContext = createContext()
 
+// állapotok lekezelése
 export const authReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
@@ -16,12 +18,14 @@ export const authReducer = (state, action) => {
   }
 }
 
+// komponens létrejötte előtt alapértelmezetten, ne legyen
+// betöltött állapotban a felhasználókezelés
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
     authIsReady: false,
   })
-
+  // kompopnens létrejöttekor állítsuk készre a felhasználókezelést
   useEffect(() => {
     const unsub = projectAuth.onAuthStateChanged((user) => {
       dispatch({ type: "AUTH_IS_READY", payload: user })
@@ -29,11 +33,12 @@ export const AuthContextProvider = ({ children }) => {
     })
   }, [])
 
-  console.log("AuthContext state:", state)
-
+  // adjuk tovább minden gyermek modulnak az állapotot
+  // és az üzenetet
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
       {children}
     </AuthContext.Provider>
   )
 }
+

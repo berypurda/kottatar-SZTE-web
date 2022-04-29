@@ -28,6 +28,12 @@ export default function Navbar() {
           </li>
         )}
 
+        {user && (
+          <li>
+            <Link to="/pdf">Pdf</Link>
+          </li>
+        )}
+
         {!user && (
           <>
             <li>

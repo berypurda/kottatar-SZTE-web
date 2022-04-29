@@ -10,6 +10,7 @@ import Home from "./pages/home/Home"
 import Score from "./pages/score/Score"
 import Upload from "./pages/upload/Upload"
 import Uploaded from "./pages/uploaded/Uploaded"
+import Pdf from "./components/Pdf"
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -44,6 +45,20 @@ function App() {
               <Route
                 path="/scores/:id"
                 element={user ? <Score /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/pdf"
+                element={
+                  user ? (
+                    <Pdf
+                      url={
+                        "https://firebasestorage.googleapis.com/v0/b/kottatar-szte.appspot.com/o/scores%2FeWGoeug3b2UZJbo7wJa1ODojfLB3%2FPortraits%20de%20quelques%20musiciens%20illustres%2C%20Op.33%20(Metzdorff%2C%20Richard)?alt=media&token=7b66279c-417d-4fbe-b93f-cb5e66e9b789"
+                      }
+                    />
+                  ) : (
+                    <Navigate to="/login" />
+                  )
+                }
               />
             </Routes>
           </div>
