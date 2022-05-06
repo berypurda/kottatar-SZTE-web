@@ -4,12 +4,12 @@ import modeIcon from "./Imgs/mode-icon.svg"
 import "./ModeSelector.css"
 
 export default function ModeSelector() {
-    const { changeMode, mode} = useMode('light')
+    const { changeMode, mode} = useMode()
 
     const toggleMode = () => {
         changeMode(mode === 'dark' ? 'light' : 'dark')
     }
-    console.log(mode)
+    //console.log(mode)
 
     return (
     <div className="mode-selector">

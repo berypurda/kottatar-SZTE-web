@@ -50,6 +50,20 @@ ul {
   background-color: var(--primary-color);
 }
 
+.nav-btn {
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #414141;
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid #414141;
+}
+.nav-btn:hover {
+  color: #fff;
+  background-color:#414141;
+}
+
 /* forms */
 label {
   display: block;

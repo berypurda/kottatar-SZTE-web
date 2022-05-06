@@ -1,51 +1,56 @@
 import { Link } from "react-router-dom"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
-import { useMode} from "../hooks/useMode"
 import ModeSelector from './ModeSelector'
-
-// styles & images
 import "./Navbar.css"
 
 
 export default function Navbar() {
   const { logout, isPending } = useLogout()
   const { user } = useAuthContext()
-  const { mode } = useMode()
-
+  
   return (
     <div className="navbar">
       <ul>
         <li className="logo">
           <Link to="/" className="brand">SZTE Kottatár</Link>
-          
         </li>
         
         {user && (
           <li>
-            <Link to="/search">Keresés</Link>
+            <Link to="/search">
+              <button className="nav-btn">Keresés</button>
+            </Link>  
           </li>
         )}
         
         {user && (
           <li>
-            <Link to="/upload">Feltöltés</Link>
+            <Link to="/upload">
+            <button className="nav-btn">Feltöltés</button>
+            </Link>
           </li>
         )}
 
         {user && (
           <li>
-            <Link to="/uploaded">Kották</Link>
+            <Link to="/uploaded">
+            <button className="nav-btn">Kották</button>
+            </Link>
           </li>
         )}
 
         {!user && (
           <>
             <li>
-              <Link to="/login">Bejelentkezés</Link>
+              <Link to="/login">
+                <button className="nav-btn">Bejelentkezés</button>
+                </Link>
             </li>
             <li>
-              <Link to="/signup">Regisztráció</Link>
+              <Link to="/signup">
+              <button className="nav-btn">Regisztráció</button>
+              </Link>
             </li>
           </>
         )}
